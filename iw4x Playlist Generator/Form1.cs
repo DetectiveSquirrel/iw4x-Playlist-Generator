@@ -1,3 +1,5 @@
+using System.Linq;
+
 namespace iw4x_Playlist_Generator
 {
     public partial class Form1 : Form
@@ -6,13 +8,16 @@ namespace iw4x_Playlist_Generator
         {
             InitializeComponent();
 
-            // Generate checkedbox list
-            foreach (var item in mapList)
+            // Generate checkedbox list & order a-z for readability
+            foreach (var item in mapList.OrderBy(i => i.Key))
                 mapCheckedListBox.Items.Add(item.Key);
         }
 
         // Called when something is checked
-        private void CheckedListBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void CheckedListBox1_SelectedIndexChanged(object sender, EventArgs e) => GenerateString();
+        private void RandomToggle_CheckedChanged(object sender, EventArgs e) => GenerateString();
+
+        private void GenerateString()
         {
             var selectedMaps = new List<string>();
 
@@ -20,14 +25,14 @@ namespace iw4x_Playlist_Generator
             foreach (var item in mapCheckedListBox.CheckedItems)
                 selectedMaps.Add(mapList.FirstOrDefault(x => x.Key == item.ToString()).Value);
 
+            // Create a randomized list
             var rnd = new Random();
             var randomSelectedMaps = selectedMaps.OrderBy(item => rnd.Next());
-            
+
             // Fill the text box for copying
             generatedText.Text = randomToggle.Checked
                 ? $"gametype <game_type_here> map {string.Join(" map ", randomSelectedMaps)}"
                 : $"gametype <game_type_here> map {string.Join(" map ", selectedMaps)}";
-
         }
 
         // Dictionary string,string list easily editable.

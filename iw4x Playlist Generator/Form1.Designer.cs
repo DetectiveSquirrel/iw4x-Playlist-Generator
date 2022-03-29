@@ -65,6 +65,7 @@
             this.randomToggle.TabIndex = 2;
             this.randomToggle.Text = "Randomize selection";
             this.randomToggle.UseVisualStyleBackColor = false;
+            this.randomToggle.CheckedChanged += new System.EventHandler(this.RandomToggle_CheckedChanged);
             // 
             // Form1
             // 
