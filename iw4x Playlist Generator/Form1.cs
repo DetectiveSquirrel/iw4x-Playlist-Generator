@@ -17,6 +17,9 @@ namespace iw4x_Playlist_Generator
         private void CheckedListBox1_SelectedIndexChanged(object sender, EventArgs e) => GenerateString();
         private void RandomToggle_CheckedChanged(object sender, EventArgs e) => GenerateString();
 
+        // Copy generated text to clipboard
+        private void CopyButton_Click(object sender, EventArgs e) => Clipboard.SetText(generatedText.Text);
+
         private void GenerateString()
         {
             var selectedMaps = new List<string>();
