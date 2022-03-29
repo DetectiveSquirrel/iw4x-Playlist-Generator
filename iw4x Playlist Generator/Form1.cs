@@ -6,31 +6,31 @@ namespace iw4x_Playlist_Generator
         {
             InitializeComponent();
 
+            // Generate checkedbox list
             foreach (var item in mapList)
-            {
                 mapCheckedListBox.Items.Add(item.Key);
-            }
-
         }
 
-        private void checkedListBox1_SelectedIndexChanged(object sender, EventArgs e)
+        // Called when something is checked
+        private void CheckedListBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             var selectedMaps = new List<string>();
 
+            // For each item that is selected get the first Key in mapList dict and grab its Value and use that
             foreach (var item in mapCheckedListBox.CheckedItems)
-            {
                 selectedMaps.Add(mapList.FirstOrDefault(x => x.Key == item.ToString()).Value);
-            }
 
             var rnd = new Random();
             var randomSelectedMaps = selectedMaps.OrderBy(item => rnd.Next());
             
+            // Fill the text box for copying
             generatedText.Text = randomToggle.Checked
                 ? $"gametype <game_type_here> map {string.Join(" map ", randomSelectedMaps)}"
                 : $"gametype <game_type_here> map {string.Join(" map ", selectedMaps)}";
 
         }
 
+        // Dictionary string,string list easily editable.
         readonly Dictionary<string, string> mapList = new() 
         {
             { "Afghan", "mp_afghan" },

@@ -44,7 +44,7 @@
             this.mapCheckedListBox.Name = "mapCheckedListBox";
             this.mapCheckedListBox.Size = new System.Drawing.Size(394, 832);
             this.mapCheckedListBox.TabIndex = 0;
-            this.mapCheckedListBox.SelectedIndexChanged += new System.EventHandler(this.checkedListBox1_SelectedIndexChanged);
+            this.mapCheckedListBox.SelectedIndexChanged += new System.EventHandler(this.CheckedListBox1_SelectedIndexChanged);
             // 
             // generatedText
             // 
