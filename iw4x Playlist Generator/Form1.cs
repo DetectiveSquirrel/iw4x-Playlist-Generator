@@ -70,18 +70,20 @@ namespace iw4x_Playlist_Generator
             { "Nuketown", "mp_nuked" },
             { "Crossfire", "mp_cross_fire" },
             { "Bloc", "mp_bloc" },
-            { "Cargoship", "mp_cargoship" },
             { "Killhouse", "mp_killhouse" },
             { "Bog", "mp_bog_sh" },
             { "Freighter", "mp_cargoship_sh" },
-            { "Long: Shipment", "mp_shipment_long" },
-            { "Long: Rust", "mp_rust_long" },
+            { "Shipment: Long", "mp_shipment_long" },
+            { "Shipment", "mp_shipment" },
+            { "Rust: Long", "mp_rust_long" },
             { "Firing Range", "mp_firingrange" },
             { "Chemical Plant", "mp_storm_spring" },
-            { "Tropical: Favela", "mp_fav_tropical" },
-            { "Tropical: Estate", "mp_estate_tropical" },
-            { "Tropical: Crash", "mp_crash_tropical" },
-            { "Forgotten City", "mp_bloc_sh" }
+            { "Favela: Tropical", "mp_fav_tropical" },
+            { "Estate: Tropical", "mp_estate_tropical" },
+            { "Oilrig (SP)", "oilrig" },
+            { "Crash: Tropical", "mp_crash_tropical" },
+            { "Forgotten City", "mp_bloc_sh" },
+            { "Wet Work", "mp_cargoship" }
         };
     }
 }
